@@ -25,24 +25,6 @@ Bem-vindo ao meu portfólio profissional! Este projeto foi desenvolvido com foco
 
 ---
 
-## 📂 Estrutura de Diretórios
-
-/portfolio-ademilson
-├── css/
-│ └── style.css
-├── img/
-│ ├── banner.jpg
-│ ├── perfil.png
-│ ├── projeto1.png
-│ ├── projeto2.png
-│ ├── projeto3.png
-├── js/
-│ └── script.js
-├── index.html
-└── README.md
-
----
-
 ## 🚀 Funcionalidades Implementadas
 
 ### ✔️ Menu Responsivo
@@ -62,84 +44,6 @@ Bem-vindo ao meu portfólio profissional! Este projeto foi desenvolvido com foco
 - ✉️ **Contato:** Dados para contato profissional.
 
 ---
-
-## 🧠 Código-Fonte Estruturado
-
-### 🔹 HTML
-
-```html
-<header>
-  <div class="logo">Ademilson Nunes</div>
-  <nav>
-    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
-    <ul class="menu" id="menu">
-      <li><a href="#inicio">Início</a></li>
-      <li><a href="#sobre">Sobre</a></li>
-      <li><a href="#servicos">Serviços</a></li>
-      <li><a href="#portfolio">Portfólio</a></li>
-      <li><a href="#contato">Contato</a></li>
-    </ul>
-  </nav>
-</header>
-/* Banner com overlay */
-.banner {
-  background: url('img/banner.jpg') center/cover no-repeat;
-  color: white;
-  padding: 100px 20px;
-  text-align: center;
-  position: relative;
-}
-
-.banner::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
-  z-index: 1;
-}
-
-.banner h1, .banner p {
-  position: relative;
-  z-index: 2;
-}
-const menuToggle = document.getElementById('menu-toggle');
-const menu = document.getElementById('menu');
-
-menuToggle.addEventListener('click', () => {
-  menu.classList.toggle('active');
-});
-
-const links = document.querySelectorAll('nav ul li a');
-links.forEach(link => {
-  link.addEventListener('click', () => {
-    links.forEach(item => item.classList.remove('active'));
-    link.classList.add('active');
-  });
-});
-
-// Submenu mobile
-const submenuParents = document.querySelectorAll('.submenu-parent');
-submenuParents.forEach(item => {
-  item.addEventListener('click', (e) => {
-    if (window.innerWidth <= 768) {
-      const submenu = item.querySelector('.submenu');
-      submenu.classList.toggle('active');
-
-      submenuParents.forEach(other => {
-        if (other !== item) {
-          const otherSubmenu = other.querySelector('.submenu');
-          if (otherSubmenu) {
-            otherSubmenu.classList.remove('active');
-          }
-        }
-      });
-      e.stopPropagation();
-    }
-  });
-});
 
 🏗️ Melhorias Futuras
 🔹 Adicionar formulário de contato funcional com backend.
